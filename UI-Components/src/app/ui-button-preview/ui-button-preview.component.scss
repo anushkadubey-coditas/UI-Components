@@ -1,0 +1,15 @@
+.preview-section {
+    margin-bottom: 2rem;
+  
+    h2 {
+      margin-bottom: 1rem;
+      color: var(--text-color, #fff);
+    }
+  
+    .preview-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  }
+  

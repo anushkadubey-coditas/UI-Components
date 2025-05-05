@@ -1,0 +1,17 @@
+<div class="mb-3">
+  <label class="form-label" *ngIf="label">{{ label }} <span class="text-danger" *ngIf="required">*</span></label>
+  <input
+    class="form-control"
+    [placeholder]="placeholder"
+    [(ngModel)]="model"
+    [required]="required"
+    #input="ngModel"
+    (ngModelChange)="onModelChange($event)"
+    (blur)="onBlur()"
+    [disabled]="disabled"
+  />
+  <div class="text-danger mt-1" *ngIf="input.invalid && (input.dirty || input.touched || touched)">
+    <small *ngIf="input.errors?.['required']">This field is required</small>
+  </div>
+</div>
+  

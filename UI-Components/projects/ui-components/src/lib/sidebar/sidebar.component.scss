@@ -1,0 +1,40 @@
+@use '../styles/variables' as *;
+@use '../styles/themes' as *;
+@use '../styles/typography' as *;
+
+.sidebar {
+  width: 240px;
+  background-color: var(--sidebar-bg);
+  height: 100vh;
+  padding: $spacer;
+
+  font-family: $font-family-base;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin: 0.5rem 0;
+
+    a {
+      text-decoration: none;
+      color: var(--text-color);
+      display: block;
+      padding: 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+
+      &:hover {
+        background-color: var(--sidebar-hover-bg, rgba(0, 0, 0, 0.05));
+      }
+
+      &.active {
+        font-weight: bold;
+        color: var(--dark, $dark);
+        background-color: var(--sidebar-active-bg, rgba(13, 110, 253, 0.1));
+      }
+    }
+  }
+}

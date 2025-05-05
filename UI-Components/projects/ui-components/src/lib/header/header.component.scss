@@ -1,0 +1,100 @@
+@use '../styles/variables' as *;
+@use '../styles/themes' as *;
+@use '../styles/typography' as *;
+
+.header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+    
+    .search {
+      width: 200px;
+      height: 36px;
+      padding: 0 0.8rem;
+      border: 1px solid var(--input-border);
+      border-radius: 6px;
+      background-color: var(--background-color);
+      color: var(--text-color);
+
+      &:focus {
+        outline: none;
+        border-color: var(--input-focus-border);
+        box-shadow: 0 0 0 0.2rem var(--input-focus-shadow);
+      }
+    }
+
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--input-border);
+      background-color: transparent;
+      color: var(--text-color);
+      transition: all 0.2s ease;
+      
+      i {
+        font-size: 1.2rem;
+        transition: transform 0.4s ease;
+      }
+      
+      &:hover {
+        background-color: var(--sidebar-hover-bg);
+        transform: rotate(15deg);
+      }
+      
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    .dropdown-menu {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      min-width: 160px;
+
+      .dropdown-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-color);
+        padding: 0.5rem 1rem;
+
+        i {
+          font-size: 1rem;
+        }
+
+        &:hover {
+          background-color: var(--sidebar-hover-bg);
+        }
+
+        &:active, &.active {
+          background-color: var(--sidebar-active-bg);
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+}
+  

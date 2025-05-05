@@ -1,0 +1,5 @@
+@use '../styles/variables' as *;
+
+select.form-select {
+  font-size: $font-size-base;
+}

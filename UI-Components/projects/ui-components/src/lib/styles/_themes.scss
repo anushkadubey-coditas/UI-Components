@@ -1,0 +1,68 @@
+// themes.scss
+@use 'variables' as *;
+
+.theme-light {
+  // Base colors
+  --background-color: #{$background-light};
+  --text-color: #{$text-color-light};
+  
+  // Component colors
+  --header-bg: #{$header-bg-light};
+  --header-text: #{$text-color-light};
+  --sidebar-bg: #{$sidebar-bg-light};
+  --primary-color: #{$primary};
+  --secondary-color: #{$secondary};
+  --sidebar-hover-bg: rgba(0, 0, 0, 0.05);
+  --sidebar-active-bg: rgba(13, 110, 253, 0.1);
+  
+  // Border colors
+  --border-color: #{$border-color-light};
+  --input-border: #{$border-color-light};
+  --input-focus-border: #{$primary};
+  --input-focus-shadow: rgba(13, 110, 253, 0.25);
+  
+  // Status colors
+  --error-color: #{$danger};
+  --success-color: #{$success};
+  --warning-color: #{$warning};
+  --info-color: #{$info};
+  
+  // Typography
+  --font-family-base: #{$font-family-base};
+  --font-size-base: #{$font-size-base};
+  --font-weight-normal: #{$font-weight-normal};
+  --font-weight-bold: #{$font-weight-bold};
+}
+
+.theme-dark {
+  // Base colors
+  --background-color: #{$background-dark};
+  --text-color: #{$text-color-dark};
+  
+  // Component colors
+  --header-bg: #{$header-bg-dark};
+  --header-text: #{$text-color-dark};
+  --sidebar-bg: #{$sidebar-bg-dark};
+  --primary-color: #{$primary};
+  --secondary-color: #{$secondary};
+  --sidebar-hover-bg: rgba(255, 255, 255, 0.05);
+  --sidebar-active-bg: rgba(59, 130, 246, 0.2);
+  
+  // Border colors
+  --border-color: #{$border-color-dark};
+  --input-border: #{$border-color-dark};
+  --input-focus-border: #{$primary};
+  --input-focus-shadow: rgba(59, 130, 246, 0.25);
+  
+  // Status colors
+  --error-color: #{$danger};
+  --success-color: #{$success};
+  --warning-color: #{$warning};
+  --info-color: #{$info};
+  
+  // Typography
+  --font-family-base: #{$font-family-base};
+  --font-size-base: #{$font-size-base};
+  --font-weight-normal: #{$font-weight-normal};
+  --font-weight-bold: #{$font-weight-bold};
+}

@@ -1,0 +1,41 @@
+.typography-preview {
+    padding: 1rem;
+  
+    :deep(h1),
+    :deep(h2),
+    :deep(h3),
+    :deep(h4),
+    :deep(h5),
+    :deep(h6),
+    :deep(p),
+    :deep(blockquote) {
+      color: var(--text-color, #212529);
+    }
+  
+    :deep(.text-muted) {
+      color: var(--muted-color, #6c757d);
+    }
+  
+    :deep(.lead) {
+      font-size: 1.25rem;
+      font-weight: 300;
+    }
+  
+    :deep(.blockquote) {
+      padding: 1rem;
+      border-left: 4px solid var(--primary, #0d6efd);
+      background: var(--bs-light, #f8f9fa);
+    }
+  
+    @media (prefers-color-scheme: dark) {
+      :deep(*) {
+        --text-color: #f8f9fa;
+        --muted-color: #adb5bd;
+      }
+  
+      :deep(.blockquote) {
+        background: #2c2c2c;
+      }
+    }
+  }
+  

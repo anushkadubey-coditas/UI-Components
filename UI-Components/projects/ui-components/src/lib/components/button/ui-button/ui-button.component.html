@@ -1,0 +1,12 @@
+<button
+  class="btn"
+  [ngClass]="[
+    'btn-' + variant,
+    sizeClass,
+    disabled ? 'btn-disabled' : ''
+  ]"
+  [disabled]="disabled"
+>
+  <i *ngIf="icon" class="{{ icon }} me-2"></i>
+  <ng-content></ng-content>
+</button>

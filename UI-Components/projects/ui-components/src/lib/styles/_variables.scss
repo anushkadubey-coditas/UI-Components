@@ -1,0 +1,56 @@
+// Color Palette
+$primary: #0d6efd;
+$secondary: #6c757d;
+$success: #198754;
+$danger: #dc3545;
+$warning: #ffc107;
+$info: #0dcaf0;
+$light: #f8f9fa;
+$dark: #212529;
+
+// Background & Text Colors
+$background-light: #ffffff;
+$background-dark: #121212;
+$text-color-light: #212529;
+$text-color-dark: #f8f9fa;
+
+// Component Colors
+$header-bg-light: #f8f9fa;
+$header-bg-dark: #1e1e2f;
+$sidebar-bg-light: #f1f1f1;
+$sidebar-bg-dark: #1a1a1a;
+
+// Font
+$font-family-base: 'Roboto', sans-serif;
+$font-size-base: 1rem;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// Spacing
+$spacer: 1rem;
+$spacer-sm: 0.5rem;
+$spacer-lg: 2rem;
+
+// Borders & Radius
+$border-radius: 0.375rem;
+$border-width: 1px;
+$border-color-light: #dee2e6;
+$border-color-dark: #2d3748;
+
+// Shadows
+$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+// Define CSS Variables for use with themes
+:root {
+  // Base colors
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --success: #{$success};
+  --danger: #{$danger};
+  --warning: #{$warning};
+  --info: #{$info};
+  --light: #{$light};
+  --dark: #{$dark};
+}
+  

@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import '../projects/ui-components/src/lib/styles/_themes.scss';
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  font-family: var(--font-family-base, 'Roboto', sans-serif);
+}
+
+// Default to light theme if no class is present
+body:not(.theme-dark):not(.theme-light) {
+  @extend .theme-light;
+}
+
+// Import Bootstrap icons
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+// Ensure theme variables are applied to Bootstrap components
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+input, select, textarea {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--input-border) !important;
+}
+
+.dropdown-menu {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}

@@ -1,0 +1,11 @@
+@use '../../../styles/variables' as vars;
+
+.form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: vars.$spacer-sm;
+
+  .form-check-input {
+    margin-right: vars.$spacer-sm;
+  }
+}

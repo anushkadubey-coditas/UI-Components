@@ -1,0 +1,16 @@
+.color-preview-container {
+    padding: 1rem;
+    background-color: var(--bg);
+    color: var(--text-color);
+  
+    h2 {
+      margin-bottom: 1rem;
+    }
+  
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+  }
+  

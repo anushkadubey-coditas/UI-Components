@@ -1,0 +1,18 @@
+.preview-section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: var(--text-color, #212529);
+  }
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

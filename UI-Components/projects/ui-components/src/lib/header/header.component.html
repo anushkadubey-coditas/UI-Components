@@ -1,0 +1,20 @@
+<header class="header">
+    <div class="title">Design System</div>
+  
+    <div class="header-actions">
+      <input type="text" class="search" placeholder="Search components..." />
+  
+      <!-- Content projection slot for additional actions -->
+      <ng-content></ng-content>
+
+      <!-- Theme toggle button -->
+      <button 
+        class="btn btn-icon theme-toggle" 
+        (click)="toggleTheme()"
+        title="Toggle theme"
+      >
+        <i class="bi" [ngClass]="{'bi-sun-fill': theme === 'light', 'bi-moon-fill': theme === 'dark'}"></i>
+      </button>
+    </div>
+  </header>
+  

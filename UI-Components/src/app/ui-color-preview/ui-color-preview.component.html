@@ -1,0 +1,11 @@
+<div class="color-preview-container">
+    <h2>Color Palette</h2>
+    <div class="color-grid">
+      <ui-color-box
+        *ngFor="let color of colorList"
+        [colorName]="color.name"
+        [variable]="color.var"
+      />
+    </div>
+  </div>
+  

@@ -1,0 +1,14 @@
+<div class="mb-3">
+    <label *ngIf="label" class="form-label">{{ label }}</label>
+    <input
+      [type]="type"
+      class="form-control"
+      [placeholder]="placeholder"
+      [value]="value"
+      (input)="onInputChange($event)"
+      [required]="required"
+      [disabled]="disabled"
+      [id]="inputId"
+    />
+  </div>
+  

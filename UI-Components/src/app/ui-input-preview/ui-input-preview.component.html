@@ -1,0 +1,46 @@
+<div class="preview-section">
+  <h2>Text Input</h2>
+  <ui-text-input 
+    label="Text Input" 
+    placeholder="Enter text" 
+    [(value)]="textValue">
+  </ui-text-input>
+</div>
+
+<div class="preview-section">
+  <h2>Select</h2>
+  <ui-select 
+    label="Select" 
+    [options]="selectOptions" 
+    [(value)]="selectedOption">
+  </ui-select>
+</div>
+
+<div class="preview-section">
+  <h2>Radio Buttons</h2>
+  <div class="radio-group">
+    <ui-radio
+      *ngFor="let option of radioOptions"
+      [label]="option.label"
+      [value]="option.value"
+      [checked]="selectedRadioValue === option.value"
+      [name]="'demo-radio-group'"
+      (checkedChange)="selectedRadioValue = option.value">
+    </ui-radio>
+  </div>
+</div>
+
+<div class="preview-section">
+  <h2>Checkbox</h2>
+  <ui-checkbox
+  label="Default Checkbox"
+  [checked]="checkboxDefault"
+  (checkedChange)="checkboxDefault = $event"
+></ui-checkbox>
+
+  <ui-checkbox
+  label="Disabled Checkbox"
+  [checked]="true"
+  [disabled]="true"
+></ui-checkbox>
+</div>
