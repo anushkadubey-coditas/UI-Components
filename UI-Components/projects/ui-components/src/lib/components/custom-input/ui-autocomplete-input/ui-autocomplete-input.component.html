@@ -1,0 +1,11 @@
+<div class="mb-3">
+    <label class="form-label">{{ label }}</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="{{ placeholder }}"
+      [(ngModel)]="selected"
+      [typeahead]="options.length ? options : suggestions"
+    />
+  </div>
+  

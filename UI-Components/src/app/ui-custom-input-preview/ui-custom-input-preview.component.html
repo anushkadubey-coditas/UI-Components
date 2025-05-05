@@ -13,12 +13,19 @@
   
     <section>
       <h5>✅ Autocomplete Input</h5>
-      <!-- Uncomment when component is available -->
-      <!-- <ui-autocomplete-input
-        [(model)]="autocompleteModel"
-        [suggestions]="suggestions"
-        placeholder="Start typing a fruit..."
-      /> -->
+      <ui-autocomplete-input
+      [(model)]="autocompleteModel"
+      [suggestions]="suggestions"
+      placeholder="Start typing a name..."
+    />
+    </section>
+
+    <section>
+      <h5>✅ Toggle Button</h5>
+      <ui-toggle-button
+        [(checked)]="toggleState"
+        label="Enable Notifications"
+      />
     </section>
   </div>
   
