@@ -1,0 +1,28 @@
+<table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th *ngFor="let col of columns" (click)="enableSorting ? sortBy(col) : null" style="cursor: pointer;">
+          {{ col | titlecase }}
+          <span *ngIf="sortColumn === col">
+            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of paginatedData">
+        <td *ngFor="let col of columns">{{ row[col] }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <pagination
+    *ngIf="enablePagination"
+    [totalItems]="data.length"
+    [(ngModel)]="currentPage"
+    [itemsPerPage]="itemsPerPage"
+    (pageChanged)="pageChanged($event)"
+    class="pagination-sm"
+    [boundaryLinks]="true"
+  ></pagination>
+  

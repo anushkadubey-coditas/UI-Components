@@ -1,0 +1,32 @@
+
+  <div>
+  <h3>Normal Table (No Pagination or Sorting)</h3>
+  <ui-table
+    [data]="users"
+    [columns]="columns"
+    [enablePagination]="false"
+    [enableSorting]="false"
+  ></ui-table>
+
+  <hr class="my-5">
+
+  <h3>Table with Pagination</h3>
+  <ui-table
+    [data]="users"
+    [columns]="columns"
+    [itemsPerPage]="5"
+    [enablePagination]="true"
+    [enableSorting]="false"
+  ></ui-table>
+
+  <hr class="my-5">
+
+  <h3>Table with Sorting</h3>
+  <ui-table
+    [data]="users"
+    [columns]="columns"
+    [enablePagination]="false"
+    [enableSorting]="true"
+  ></ui-table>
+</div>
+  

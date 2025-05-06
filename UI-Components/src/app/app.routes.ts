@@ -4,6 +4,7 @@ import { UiInputPreviewComponent } from './ui-input-preview/ui-input-preview.com
 import { UiCustomInputPreviewComponent } from './ui-custom-input-preview/ui-custom-input-preview.component';
 import { UiColorPreviewComponent } from './ui-color-preview/ui-color-preview.component';
 import { UiTypographyPreviewComponent } from './ui-typography-preview/ui-typography-preview.component';
+import { UiTablePreviewComponent } from './ui-table-preview/ui-table-preview.component';
 
 
 export const routes: Routes = [
@@ -11,6 +12,7 @@ export const routes: Routes = [
     { path: 'preview/input', component: UiInputPreviewComponent },
     { path: 'preview/custom-input', component: UiCustomInputPreviewComponent },
     { path: 'preview/color', component: UiColorPreviewComponent },
-    { path: 'preview/typography', component: UiTypographyPreviewComponent }
+    { path: 'preview/typography', component: UiTypographyPreviewComponent },
+    { path: 'preview/table', component: UiTablePreviewComponent }
   ];
   
