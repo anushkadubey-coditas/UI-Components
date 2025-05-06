@@ -1,6 +1,59 @@
+.ui-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
 table {
-    th {
-      user-select: none;
+  background-color: var(--table-bg);
+  color: var(--text-color);
+
+  th {
+    user-select: none;
+    background-color: var(--table-header-bg);
+    color: var(--table-header-color);
+    border-color: var(--table-border-color) !important;
+    
+    &.sortable {
+      cursor: pointer;
+      
+      &:hover {
+        background-color: var(--table-hover-bg);
+      }
+    }
+    
+    .sort-indicator {
+      margin-left: 0.5rem;
+      opacity: 0.7;
     }
   }
+
+  td {
+    border-color: var(--table-border-color) !important;
+  }
+
+  tbody tr:hover {
+    background-color: var(--table-hover-bg);
+    color: var(--table-hover-color);
+  }
+}
+
+// Style the pagination to match the theme
+::ng-deep .pagination {
+  .page-link {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-color: var(--border-color);
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+  }
+
+  .active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+  }
+}
   

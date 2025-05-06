@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 export interface SidebarItem {
+  id?: string;
   label: string;
   route: string;
   icon?: string;

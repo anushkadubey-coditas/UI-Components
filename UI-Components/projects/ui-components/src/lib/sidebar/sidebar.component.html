@@ -1,23 +1,11 @@
 <nav class="d-flex flex-column sidebar p-3">
     <h5 class="mb-4">UI Components</h5>
     <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/preview/color" routerLinkActive="active">Colors</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/preview/button" routerLinkActive="active">Buttons</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/preview/input" routerLinkActive="active">Inputs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/preview/custom-input" routerLinkActive="active">Custom Inputs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/preview/typography" routerLinkActive="active">Typography</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/preview/table" routerLinkActive="active">Table</a>
+      <li class="nav-item" *ngFor="let item of items">
+        <a class="nav-link" [routerLink]="item.route" routerLinkActive="active">
+          <i *ngIf="item.icon" [class]="item.icon" class="me-2"></i>
+          {{item.label}}
+        </a>
       </li>
     </ul>
   </nav>

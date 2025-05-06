@@ -50,3 +50,25 @@ input, select, textarea {
   color: var(--text-color);
   border-color: var(--border-color);
 }
+
+// Table styles for theme support
+.table {
+  color: var(--text-color);
+  background-color: var(--table-bg);
+  border-color: var(--table-border-color);
+}
+
+.table thead th {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-color);
+  border-color: var(--table-border-color);
+}
+
+.table tbody td {
+  border-color: var(--table-border-color);
+}
+
+.table-hover tbody tr:hover {
+  background-color: var(--table-hover-bg);
+  color: var(--table-hover-color);
+}

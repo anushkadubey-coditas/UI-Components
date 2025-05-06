@@ -4,6 +4,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { SidebarComponent } from '../../projects/ui-components/src/public-api';
 import { HeaderComponent } from '../../projects/ui-components/src/lib/header/header.component';
 import { CommonModule } from '@angular/common';
+import { MenuItem, Theme } from './shared/models/menu.models';
+import { MenuService } from './shared/services/menu.service';
 
 @Component({
   selector: 'app-root',
@@ -13,24 +15,24 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-  menuItems = [
-    { label: 'Buttons', route: '/preview/button', icon: 'bi bi-hand-index' },
-    { label: 'Inputs', route: '/preview/input', icon: 'bi bi-input-cursor' },
-    { label: 'Custom Inputs', route: '/preview/custom-input', icon: 'bi bi-custom-input' },
-  ];
+  menuItems: MenuItem[] = [];
+  currentTheme: Theme = Theme.Light;
 
-  currentTheme: 'light' | 'dark' = 'light';
+  constructor(private menuService: MenuService) {}
 
   ngOnInit() {
+    // Get menu items from service
+    this.menuItems = this.menuService.getMenuItems();
+    
     // Initialize with saved preference or default to light
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
-    if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
+    const savedTheme = localStorage.getItem('theme') as Theme;
+    if (savedTheme && (savedTheme === Theme.Light || savedTheme === Theme.Dark)) {
       this.currentTheme = savedTheme;
     }
     this.applyTheme(this.currentTheme);
   }
 
-  applyTheme(theme: 'light' | 'dark') {
+  applyTheme(theme: Theme) {
     this.currentTheme = theme;
     localStorage.setItem('theme', theme);
     

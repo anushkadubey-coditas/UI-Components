@@ -1,9 +1,10 @@
-<table class="table table-bordered table-hover">
+<div class="ui-table-container">
+  <table class="table table-bordered table-hover">
     <thead>
       <tr>
-        <th *ngFor="let col of columns" (click)="enableSorting ? sortBy(col) : null" style="cursor: pointer;">
+        <th *ngFor="let col of columns" (click)="enableSorting ? sortBy(col) : null" [class.sortable]="enableSorting">
           {{ col | titlecase }}
-          <span *ngIf="sortColumn === col">
+          <span *ngIf="sortColumn === col" class="sort-indicator">
             {{ sortDirection === 'asc' ? '▲' : '▼' }}
           </span>
         </th>
@@ -12,6 +13,9 @@
     <tbody>
       <tr *ngFor="let row of paginatedData">
         <td *ngFor="let col of columns">{{ row[col] }}</td>
+      </tr>
+      <tr *ngIf="paginatedData.length === 0">
+        <td [attr.colspan]="columns.length" class="text-center">No data available</td>
       </tr>
     </tbody>
   </table>
@@ -25,4 +29,5 @@
     class="pagination-sm"
     [boundaryLinks]="true"
   ></pagination>
+</div>
   
