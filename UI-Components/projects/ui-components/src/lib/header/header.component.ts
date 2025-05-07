@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { HeaderService } from './header.service';
 
 // Define theme type locally
 export enum Theme {
@@ -16,8 +17,11 @@ export enum Theme {
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
+
   @Input() theme: Theme = Theme.Light;
   @Output() themeChange = new EventEmitter<Theme>();
+  private headerService = inject(HeaderService);
+  title = this.headerService.title;
 
   ngOnInit() {
     // Initialize theme

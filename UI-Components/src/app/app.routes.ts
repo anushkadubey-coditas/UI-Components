@@ -5,6 +5,11 @@ import { UiCustomInputPreviewComponent } from './ui-custom-input-preview/ui-cust
 import { UiColorPreviewComponent } from './ui-color-preview/ui-color-preview.component';
 import { UiTypographyPreviewComponent } from './ui-typography-preview/ui-typography-preview.component';
 import { UiTablePreviewComponent } from './ui-table-preview/ui-table-preview.component';
+import { UiSidebarPreviewComponent } from './ui-sidebar-preview/ui-sidebar-preview.component';
+import { QuestionnaireSidebarComponent } from './questionnaire-sidebar/questionnaire-sidebar.component';
+import { CssFormComponent } from './css-form/css-form.component';
+import { JsFormComponent } from './js-form/js-form.component';
+import { HtmlFormComponent } from './html-form/html-form.component';
 
 
 export const routes: Routes = [
@@ -13,6 +18,13 @@ export const routes: Routes = [
     { path: 'preview/custom-input', component: UiCustomInputPreviewComponent },
     { path: 'preview/color', component: UiColorPreviewComponent },
     { path: 'preview/typography', component: UiTypographyPreviewComponent },
-    { path: 'preview/table', component: UiTablePreviewComponent }
+    { path: 'preview/table', component: UiTablePreviewComponent },
+    { path: 'design-system', component: UiSidebarPreviewComponent },
+    { path: 'questionnaire', component: QuestionnaireSidebarComponent },
+    { path: 'html', component: HtmlFormComponent },
+    { path: 'css', component: CssFormComponent },
+    { path: 'js', component: JsFormComponent }
+
+
   ];
   

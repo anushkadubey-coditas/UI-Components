@@ -1,13 +1,18 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'ui-text-input',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './ui-text-input.component.html',
-  styleUrls: ['./ui-text-input.component.scss']
+  styleUrls: ['./ui-text-input.component.scss'],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => UiTextInputComponent),
+    multi: true
+  }]
 })
 export class UiTextInputComponent {
   @Input() label = '';
@@ -18,6 +23,22 @@ export class UiTextInputComponent {
   @Input() inputId: string = 'text-input';
 
   private _value: string = '';
+  newValue = '';
+
+  onChange = (value: any) => {};
+  onTouched = () => {};
+
+  writeValue(value: any): void {
+    this.newValue = value;
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
   
   @Input()
   get value(): string {
@@ -30,7 +51,8 @@ export class UiTextInputComponent {
 
   @Output() valueChange = new EventEmitter<string>();
 
-  onInputChange(event: any) {
-    this.value = event.target.value;
+  getInputValue(event: Event): string {
+    const target = event.target as HTMLInputElement | null;
+    return target?.value ?? '';
   }
 }

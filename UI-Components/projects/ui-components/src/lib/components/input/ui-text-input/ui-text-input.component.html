@@ -5,10 +5,11 @@
       class="form-control"
       [placeholder]="placeholder"
       [value]="value"
-      (input)="onInputChange($event)"
       [required]="required"
       [disabled]="disabled"
       [id]="inputId"
+      (input)="onChange(getInputValue($event))"
+      (blur)="onTouched()"
     />
   </div>
   

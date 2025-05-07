@@ -1,0 +1,91 @@
+<form [formGroup]="form">
+
+    <section>     
+      <div class="preview-section">
+        <ui-text-input 
+          label="1 What does HTML stand for?" 
+          placeholder="Type your answer here...."
+          formControlName="question1"
+          [(value)]="textValue">
+        </ui-text-input>
+        <lib-ui-button variant="primary" (click)="submitQuestion('question1')"
+        [disabled]="!form.get('question1')?.value">Submit</lib-ui-button>
+      </div>
+    </section>
+    <section [formGroup]="form">
+        <div class="preview-section">
+          <p>2. Which tag is used to create a hyperlink?</p>
+          <div class="radio-group">
+            @for (option of radioOptions1; track option.value) {
+              <ui-radio
+                [label]="option.label"
+                [value]="option.value"
+                [name]="'question2'"
+                formControlName="question2">
+              </ui-radio>
+            }
+          </div>
+      
+          <lib-ui-button
+            variant="primary"
+            (click)="submitQuestion('question2')"
+            [disabled]="!form.get('question2')?.value">
+            Submit
+          </lib-ui-button>
+        </div>
+      </section>
+      
+    <!-- <section>
+        <div class="preview-section">
+            <p>2 Which tag is used to create a hyperlink?</p>
+            <div class="radio-group">
+                @for (option of radioOptions1; track option.value) {
+                    <ui-radio
+                    [label]="option.label"
+                    [value]="option.value"
+                    [name]="'demo-radio-group'"
+                    formControlName="question2"
+                    (checkedChange)="selectedRadioValue = option.value">
+                </ui-radio>
+            }
+        </div>
+        <lib-ui-button variant="primary" (click)="submitQuestion('question2')"
+        [disabled]="!form.get('question2')?.value">Submit</lib-ui-button>
+    </div>
+</section> -->
+
+    <section>     
+        <div class="preview-section">
+          <ui-text-input 
+            label="3 What is the purpose of the <meta> tag?" 
+            placeholder="Type your answer here...."
+            formControlName="question3"
+            [(value)]="textValue">
+          </ui-text-input>
+          <lib-ui-button variant="primary" (click)="submitQuestion('question3')"
+          [disabled]="!form.get('question3')?.value">Submit</lib-ui-button>
+        </div>
+      </section>
+  
+    <!-- Q4 -->
+    <section>
+      <ui-radio
+        label="Question 4"
+        >
+    </ui-radio>
+    <!-- formControlName="question4" -->
+      <button type="button" (click)="submitQuestion('question4')">Submit Q4</button>
+    </section>
+  
+    <!-- Q5 -->
+    <section>
+      <ui-checkbox
+        label="Question 5"
+       
+        >
+    </ui-checkbox>
+    <!-- formControlName="question5" -->
+      <button type="button" (click)="submitQuestion('question5')">Submit Q5</button>
+    </section>
+  </form>
+  

@@ -14,10 +14,20 @@ export class MenuService {
     { id: 'table', label: 'Tables', route: MenuRoutes.Table, icon: MenuIcons.Table },
   ];
 
+  private _questionnaireItems: MenuItem[] = [
+    { id: 'html', label: 'HTML', route: MenuRoutes.html, icon: MenuIcons.HTML },
+    { id: 'css', label: 'CSS', route: MenuRoutes.css, icon: MenuIcons.CSS },
+    { id: 'js', label: 'JavaScript', route: MenuRoutes.js, icon: MenuIcons.JS }
+   ];
+
   constructor() { }
 
   getMenuItems(): MenuItem[] {
     return [...this._menuItems];
+  }
+
+  getQuestionnaire(): MenuItem[] {
+    return [...this._questionnaireItems];
   }
 
   getMenuItemById(id: string): MenuItem | undefined {

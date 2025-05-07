@@ -1,1 +1,13 @@
-<app-ui-sidebar-preview></app-ui-sidebar-preview>
+<div class="center-buttons-container">
+<div class="d-flex gap-2">
+  <button class="btn btn-primary" (click)="loadComponent('designSystem')">Design System</button>
+  <button class="btn btn-secondary" (click)="loadComponent('questionnaire')">Questionnaire</button>
+</div>
+</div>
+@if (selected === 'designSystem') {
+  <app-ui-sidebar-preview >
+  </app-ui-sidebar-preview>
+} @else if (selected === 'questionnaire') {
+  <app-questionnaire-sidebar >
+  </app-questionnaire-sidebar>
+}

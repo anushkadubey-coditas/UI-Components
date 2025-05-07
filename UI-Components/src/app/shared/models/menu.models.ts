@@ -7,7 +7,10 @@ export enum MenuRoutes {
   CustomInput = '/preview/custom-input',
   Color = '/preview/color',
   Typography = '/preview/typography',
-  Table = '/preview/table'
+  Table = '/preview/table',
+  html = '/html',
+  css = '/css',
+  js = '/js'
 }
 
 /**
@@ -19,7 +22,10 @@ export enum MenuIcons {
   CustomInput = 'bi bi-custom-input',
   Color = 'bi bi-palette',
   Typography = 'bi bi-type',
-  Table = 'bi bi-table'
+  Table = 'bi bi-table',
+  HTML = 'bi bi-code-slash',
+  CSS = 'bi bi-braces',
+  JS = 'bi bi-filetype-js'
 }
 
 /**
@@ -37,5 +43,5 @@ export interface MenuItem {
   id: string;
   label: string;
   route: MenuRoutes;
-  icon: MenuIcons;
+  icon?: MenuIcons;
 } 
