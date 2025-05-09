@@ -1,0 +1,53 @@
+<div class="form-header mb-3">
+    <h2 class="fw-bold">{{ heading }}</h2>
+    <p class="text-muted">{{ subheading }}</p>
+  </div>
+<form [formGroup]="form">
+    <section *ngFor="let q of questions; index as i">
+      <div class="preview-section">
+        <span label>
+          <span class="question-number">{{ i + 1 }}</span> {{ q.label }}
+        </span>
+  
+        <ng-container [ngSwitch]="q.type">
+          <ui-text-input
+            *ngSwitchCase="'text'"
+            [placeholder]="q.placeholder || ''"
+            [formControlName]="q.key"
+          ></ui-text-input>
+  
+          <div class="radio-group" *ngSwitchCase="'radio'">
+            @for (option of q.options; track option.value) {
+              <ui-radio
+                [label]="option.label"
+                [value]="option.value"
+                [name]="q.key"
+                [formControlName]="q.key"
+              ></ui-radio>
+            }
+          </div>
+  
+          <div class="checkbox-group" *ngSwitchCase="'checkbox'">
+            @for (option of q.options; track option.value) {
+              <ui-checkbox
+                [label]="option.label"
+                [value]="option.value"
+                [formControlName]="q.key"
+              ></ui-checkbox>
+            }
+          </div>
+        </ng-container>
+  
+        <div class="button-align-right">
+          <lib-ui-button
+            variant="primary"
+            (click)="submitQuestion(q.key)"
+            [disabled]="savedQuestions[q.key] || !getControlValue(q.key)"
+          >
+            {{ savedQuestions[q.key] ? 'Saved' : 'Submit' }}
+          </lib-ui-button>
+        </div>
+      </div>
+    </section>
+  </form>
+  

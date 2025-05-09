@@ -26,7 +26,6 @@ export class UiInputPreviewComponent {
   selectedOption = '';
   selectedRadioValue = '';
   checkboxDefault = false;
-  checkboxIndeterminate = false;
 
   selectOptions = [
     { label: 'Option 1', value: 'opt1' },

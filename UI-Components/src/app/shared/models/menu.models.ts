@@ -57,7 +57,7 @@ export interface MenuItem {
 export interface ProgressSection {
   key: string;
   label: string;
-  saved: number;
+  saved: Signal<number>;
   total: number;
 }
 

@@ -1,16 +1,15 @@
 <div>
   @for (section of sectionsSignal(); track section.key) {
     @if (section.total > 0) {
-      <div class="mb-3 p-2 rounded" [class.bg-light]="section.saved > 0">
+      <div class="mb-3 p-2 rounded" [class.bg-light]="section.saved() > 0">
         <div class="text-muted small">
-          {{signalValue}}
-         Saved {{ section.saved }} / {{ section.total }}
+         Saved {{ section.saved() }} / {{ section.total }}
           <span class="float-end">
-            {{ ((section.saved / section.total) * 100) | number: '1.0-0' }}%
+            {{ ((section.saved() / section.total) * 100) | number: '1.0-0' }}%
           </span>
         </div>
         <div class="progress mt-1" style="height: 6px;">
-          <div class="progress-bar" [style.width.%]="(section.saved / section.total) * 100"></div>
+          <div class="progress-bar" [style.width.%]="(section.saved() / section.total) * 100"></div>
         </div>
       </div>
     }

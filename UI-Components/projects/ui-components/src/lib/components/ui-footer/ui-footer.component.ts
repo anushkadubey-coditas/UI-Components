@@ -11,6 +11,5 @@ export class UiFooterComponent {
   @Input({ required: true }) text!: string;
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log({changes});
   }
 }

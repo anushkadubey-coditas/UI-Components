@@ -7,9 +7,9 @@ import { UiTypographyPreviewComponent } from './ui-typography-preview/ui-typogra
 import { UiTablePreviewComponent } from './ui-table-preview/ui-table-preview.component';
 import { UiSidebarPreviewComponent } from './ui-sidebar-preview/ui-sidebar-preview.component';
 import { QuestionnaireSidebarComponent } from './questionnaire-sidebar/questionnaire-sidebar.component';
-import { CssFormComponent } from './css-form/css-form.component';
-import { JsFormComponent } from './js-form/js-form.component';
-import { HtmlFormComponent } from './html-form/html-form.component';
+import { CssFormComponent } from './questionnaire/css-form/css-form.component';
+import { JsFormComponent } from './questionnaire/js-form/js-form.component';
+import { HtmlFormComponent } from './questionnaire/html-form/html-form.component';
 
 
 export const routes: Routes = [

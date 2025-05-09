@@ -18,13 +18,19 @@ export class MenuService {
    cssSaved = signal(0);
    jsSaved = signal(0);
 
-  private readonly _questionnaireItems: SidebarItem[] = [
+   private submittedQuestions: Record<'html' | 'css' | 'js', Set<string>> = {
+    html: new Set(),
+    css: new Set(),
+    js: new Set(),
+  };
+
+  _questionnaireItems: SidebarItem[] = [
     {
       label: 'HTML',
       route: '/html',
       icon: 'bi bi-code-slash',
       sectionsSignal: signal<ProgressSection[]>([
-        { key: 'html', label: 'HTML', saved: this.htmlSaved(), total: 5 }
+        { key: 'html', label: 'HTML', saved: this.htmlSaved, total: 5 }
       ])
     },
     {
@@ -32,7 +38,7 @@ export class MenuService {
       route: '/css',
       icon: 'bi bi-palette',
       sectionsSignal: signal<ProgressSection[]>([
-        { key: 'css', label: 'CSS', saved: this.cssSaved(), total: 5 }
+        { key: 'css', label: 'CSS', saved: this.cssSaved, total: 5 }
       ])
     },
     {
@@ -40,7 +46,7 @@ export class MenuService {
       route: '/js',
       icon: 'bi bi-cpu',
       sectionsSignal: signal<ProgressSection[]>([
-        { key: 'js', label: 'JavaScript', saved: this.jsSaved(), total: 5 }
+        { key: 'js', label: 'JavaScript', saved: this.jsSaved, total: 5 }
       ])
     }
   ];
@@ -59,9 +65,13 @@ export class MenuService {
     return this._menuItems.find(item => item.id === id);
   }
 
-  increaseSaved(section: 'html' | 'css' | 'js') {
+  increaseSaved(section: 'html' | 'css' | 'js', questionKey: string) {
+    const submittedSet = this.submittedQuestions[section];
+    if (!submittedSet.has(questionKey)) {
+      submittedSet.add(questionKey);
     if (section === 'html') this.htmlSaved.update(v => v + 1);
     if (section === 'css') this.cssSaved.update(v => v + 1);
     if (section === 'js') this.jsSaved.update(v => v + 1);
+  }
   }
 } 
