@@ -1,13 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Signal, computed, signal } from '@angular/core';
-
-interface ProgressSection {
-  icon: string;
-  label: string;
-  saved: number;
-  total: number;
-  active?: boolean;
-}
+import { ProgressSection } from '../../../../../../src/app/shared/models';
+import { ProgressTrackerService } from './progress-tracker.service';
+import { MenuService } from '../../../../../../src/app/shared/services/menu.service';
 
 @Component({
   selector: 'lib-ui-progress-tracker',
@@ -17,5 +12,13 @@ interface ProgressSection {
   standalone: true
 })
 export class UiProgressTrackerComponent {
-  @Input() sections: { saved: number; total: number }[] = [];
+  signalValue;
+  constructor(
+    private menuService: MenuService
+    
+  ) {
+    this.signalValue = this.menuService.htmlSaved();
+  }
+
+  @Input({ required: true }) sectionsSignal!: Signal<ProgressSection[]>;
 }

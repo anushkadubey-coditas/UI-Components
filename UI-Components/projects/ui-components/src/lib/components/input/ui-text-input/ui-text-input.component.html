@@ -1,5 +1,7 @@
 <div class="mb-3">
-    <label *ngIf="label" class="form-label">{{ label }}</label>
+  <label class="form-label">
+    <ng-content select="[label]"></ng-content>
+  </label>
     <input
       [type]="type"
       class="form-control"

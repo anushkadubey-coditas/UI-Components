@@ -1,3 +1,5 @@
+import { Signal, signal } from "@angular/core";
+
 /**
  * Enum for menu item routes
  */
@@ -35,6 +37,11 @@ export enum Theme {
   Light = 'light',
   Dark = 'dark'
 }
+export enum Section {
+  HTML = 'html',
+  CSS = 'css',
+  JS = 'js'
+}
 
 /**
  * Menu item interface
@@ -45,3 +52,18 @@ export interface MenuItem {
   route: MenuRoutes;
   icon?: MenuIcons;
 } 
+
+
+export interface ProgressSection {
+  key: string;
+  label: string;
+  saved: number;
+  total: number;
+}
+
+export interface SidebarItem {
+  label: string;
+  route: string;
+  icon?: string;
+  sectionsSignal: Signal<ProgressSection[]>;
+}

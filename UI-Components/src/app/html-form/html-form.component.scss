@@ -1,5 +1,4 @@
 form {
-  max-width: 500px;
   margin: 2rem auto;
   padding: 2rem;
   background: var(--background-color, #fff);
@@ -32,3 +31,18 @@ form {
       color: var(--text-color, #212529);
     }
   }
+
+  ::ng-deep .question-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: #d0ebff; // light blue
+    color: #084298;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  

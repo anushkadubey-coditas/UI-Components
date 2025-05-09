@@ -1,16 +1,13 @@
 <div class="form-check">
   <input
     type="checkbox"
-    class="form-check-input"
+    class="form-check-label"
     [id]="'checkbox-' + label"
     [checked]="checked"
     [disabled]="disabled"
-    (change)="onCheckboxChange($event)"
-  >
+    (change)="onCheckboxChange($event)">
+    
   <label class="form-check-label" [for]="'checkbox-' + label">
     {{ label }}
   </label>
 </div>
-
-
-  

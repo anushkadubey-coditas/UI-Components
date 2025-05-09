@@ -1,0 +1,14 @@
+@use '../../../styles/variables' as vars;
+
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: vars.$spacer-sm;
+  
+    .form-check-label {
+      margin-right: vars.$spacer-sm;
+    }
+    .form-check-label:checked {
+      background-color: vars.$primary !important;
+    }
+  }

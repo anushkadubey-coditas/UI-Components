@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuItem, Theme } from '../shared/models';
+import { SidebarItem, Theme } from '../shared/models';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent, SidebarComponent } from '../../../projects/ui-components/src/public-api';
 import { CommonModule } from '@angular/common';
@@ -15,7 +15,7 @@ import { HeaderService } from '../../../projects/ui-components/src/lib/header/he
 })
 export class QuestionnaireSidebarComponent {
 
-  menuItems: MenuItem[] = [];
+  menuItems: SidebarItem[] = [];
   currentTheme: Theme = Theme.Light;
 
   constructor(private menuService: MenuService,
