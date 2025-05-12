@@ -1,4 +1,4 @@
-import { Signal, signal } from "@angular/core";
+import { Signal, WritableSignal } from "@angular/core";
 
 /**
  * Enum for menu item routes
@@ -65,7 +65,7 @@ export interface Question {
 export interface ProgressSection {
   key: string;
   label: string;
-  saved: Signal<number>;
+  saved:WritableSignal<number>;
   total: number;
 }
 
