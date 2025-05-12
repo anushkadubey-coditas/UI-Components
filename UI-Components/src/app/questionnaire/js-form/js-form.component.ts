@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Section } from '../../shared/models';
+import { Question, Section } from '../../shared/models';
 import { MenuService } from '../../shared/services/menu.service';
 import { QuestionnaireFormComponent } from '../questionnaire-form/questionnaire-form.component';
 
@@ -13,7 +13,7 @@ import { QuestionnaireFormComponent } from '../questionnaire-form/questionnaire-
 export class JsFormComponent {
   section = Section.JS;
 
-  questions = [
+  questions: Question[] = [
     {
       key: 'question1',
       label: 'What is JavaScript used for?',

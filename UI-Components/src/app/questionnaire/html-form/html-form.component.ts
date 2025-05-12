@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Section } from '../../shared/models';  // Make sure Section is imported from the correct place
+import { Question, Section } from '../../shared/models';  // Make sure Section is imported from the correct place
 import { MenuService } from '../../shared/services/menu.service';
 import { QuestionnaireFormComponent } from '../questionnaire-form/questionnaire-form.component';
 
@@ -15,7 +15,7 @@ import { QuestionnaireFormComponent } from '../questionnaire-form/questionnaire-
 export class HtmlFormComponent {
   section = Section.HTML;
 
-  questions = [
+  questions: Question[] = [
     {
       key: 'question1',
       label: 'What does HTML stand for?',
@@ -69,6 +69,5 @@ export class HtmlFormComponent {
 
   submitQuestion(questionKey: string): void {
     this.menuService.increaseSaved(this.section, questionKey);
-    console.log(`Submitted ${questionKey}`);
   }
 }

@@ -21,10 +21,5 @@ export class SidebarComponent {
   onInit() {
     console.log(this.items);
   }
-  // sectionsSignal = signal<ProgressSection[]>([
-  //   { key: 'html', label: 'HTML', saved: 1, total: 5 },
-  //   { key: 'css', label: 'CSS', saved: 2, total: 5 },
-  //   { key: 'js', label: 'JavaScript', saved: 0, total: 5 }
-  // ]);
 }
 

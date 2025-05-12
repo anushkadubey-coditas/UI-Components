@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Section } from '../../shared/models';
+import { Question, Section } from '../../shared/models';
 import { MenuService } from '../../shared/services/menu.service';
 import { QuestionnaireFormComponent } from '../questionnaire-form/questionnaire-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -13,7 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class CssFormComponent {
   section = Section.CSS;
 
-  questions = [
+  questions: Question[] = [
     {
       key: 'question1',
       label: 'What does CSS stand for?',
@@ -67,6 +67,5 @@ export class CssFormComponent {
 
   submitQuestion(questionKey: string): void {
     this.menuService.increaseSaved(this.section, questionKey);
-    console.log(`CSS Question submitted: ${questionKey}`);
   }
 }

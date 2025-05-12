@@ -53,6 +53,14 @@ export interface MenuItem {
   icon?: MenuIcons;
 } 
 
+export interface Question {
+  key: string;
+  label: string;
+  type: string;
+  required?: boolean;
+  options?: { label: string; value: string }[];
+  placeholder?: string;
+}
 
 export interface ProgressSection {
   key: string;

@@ -5,10 +5,10 @@
     align-items: center;
     margin-bottom: vars.$spacer-sm;
   
-    .form-check-label {
+    .form-check-input {
       margin-right: vars.$spacer-sm;
     }
-    .form-check-label:checked {
+    .form-check-input:checked {
       background-color: vars.$primary !important;
     }
   }

@@ -10,13 +10,13 @@
         </span>
   
         <ng-container [ngSwitch]="q.type">
-          <ui-text-input
+          <ui-textarea
             *ngSwitchCase="'text'"
             [placeholder]="q.placeholder || ''"
             [formControlName]="q.key"
-          ></ui-text-input>
+          ></ui-textarea>
   
-          <div class="radio-group" *ngSwitchCase="'radio'">
+          <div class="radio-group question-separator" *ngSwitchCase="'radio'">
             @for (option of q.options; track option.value) {
               <ui-radio
                 [label]="option.label"
@@ -27,11 +27,12 @@
             }
           </div>
   
-          <div class="checkbox-group" *ngSwitchCase="'checkbox'">
+          <div class="checkbox-group question-separator" *ngSwitchCase="'checkbox'">
             @for (option of q.options; track option.value) {
               <ui-checkbox
                 [label]="option.label"
                 [value]="option.value"
+                [name]="q.key"
                 [formControlName]="q.key"
               ></ui-checkbox>
             }
@@ -41,8 +42,8 @@
         <div class="button-align-right">
           <lib-ui-button
             variant="primary"
-            (click)="submitQuestion(q.key)"
-            [disabled]="savedQuestions[q.key] || !getControlValue(q.key)"
+            (click)="submitQuestion(q)"
+            [disabled]="savedQuestions[q.key] || isControlEmpty(q.key, q.type)"
           >
             {{ savedQuestions[q.key] ? 'Saved' : 'Submit' }}
           </lib-ui-button>

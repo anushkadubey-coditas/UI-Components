@@ -19,6 +19,7 @@ import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class UiCheckboxComponent {
   @Output() checkedChange = new EventEmitter<boolean>();
   @Input() label = '';
+  @Input() name!: string;
   @Input() value: string = '';
   @Input() disabled = false;
 

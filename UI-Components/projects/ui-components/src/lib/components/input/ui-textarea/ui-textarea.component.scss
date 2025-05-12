@@ -1,0 +1,10 @@
+@use '../styles/variables' as *;
+textarea.form-control {
+    resize: vertical;
+    font-size: $font-size-base;
+    height: 150px;
+
+  }
+  
+  
+

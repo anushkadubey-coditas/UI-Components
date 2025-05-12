@@ -7,6 +7,12 @@ $btn-padding: (
   lg: 0.5rem 1rem
 );
 
+.btn-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .btn {
   border-radius: 0.5rem;
   font-weight: 500;

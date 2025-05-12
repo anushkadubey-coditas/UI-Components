@@ -1,0 +1,17 @@
+<div class="mb-3">
+    <label class="form-label" *ngIf="placeholder">
+      <ng-content select="[label]"></ng-content>
+    </label>
+    <textarea
+      class="form-control"
+      [rows]="rows"
+      [placeholder]="placeholder"
+      [required]="required"
+      [disabled]="disabled"
+      [id]="inputId"
+      [value]="value"
+      (input)="handleInput($event)"
+      (blur)="handleBlur()"
+    ></textarea>
+  </div>
+  
