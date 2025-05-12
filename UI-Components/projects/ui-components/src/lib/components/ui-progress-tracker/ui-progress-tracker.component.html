@@ -9,7 +9,14 @@
           </span>
         </div>
         <div class="progress mt-1" style="height: 6px;">
-          <div class="progress-bar" [style.width.%]="(section.saved() / section.total) * 100"></div>
+          <div
+          class="progress-bar"
+          [ngClass]="{
+            'bg-success': section.saved() === section.total,
+            'bg-primary': section.saved() < section.total
+          }"
+          [style.width.%]="(section.saved() / section.total) * 100"
+        ></div>
         </div>
       </div>
     }

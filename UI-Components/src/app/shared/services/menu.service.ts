@@ -1,5 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { MenuItem, MenuIcons, MenuRoutes, SidebarItem, ProgressSection } from '../models/menu.models';
+import { Section } from '../../shared/models';
 
 @Injectable({
   providedIn: 'root'
@@ -65,13 +66,13 @@ export class MenuService {
     return this._menuItems.find(item => item.id === id);
   }
 
-  increaseSaved(section: 'html' | 'css' | 'js', questionKey: string) {
+  increaseSaved(section: Section.HTML | Section.CSS | Section.JS, questionKey: string) {
     const submittedSet = this.submittedQuestions[section];
     if (!submittedSet.has(questionKey)) {
       submittedSet.add(questionKey);
-    if (section === 'html') this.htmlSaved.update(v => v + 1);
-    if (section === 'css') this.cssSaved.update(v => v + 1);
-    if (section === 'js') this.jsSaved.update(v => v + 1);
+    if (section === Section.HTML) this.htmlSaved.update(v => v + 1);
+    if (section === Section.CSS) this.cssSaved.update(v => v + 1);
+    if (section === Section.JS) this.jsSaved.update(v => v + 1);
   }
   }
 } 

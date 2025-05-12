@@ -10,6 +10,7 @@ import {
   NonNullableFormBuilder,
   FormGroup,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Section } from '../../shared/models';
@@ -35,8 +36,8 @@ import { CommonModule } from '@angular/common';
 export class QuestionnaireFormComponent implements OnInit {
   @Input() section!: Section;
   @Input() questions: any[] = [];
-  @Input() heading: string = ''; 
-  @Input() subheading: string = ''; 
+  @Input() heading: string = '';
+  @Input() subheading: string = '';
   @Output() submitted = new EventEmitter<string>();
 
   private fb = inject(NonNullableFormBuilder);
@@ -49,6 +50,7 @@ export class QuestionnaireFormComponent implements OnInit {
   ngOnInit(): void {
     for (const q of this.questions) {
       const defaultValue = q.type === 'checkbox' ? [] : '';
+      const validators = q.required ? [Validators.required] : [];
       this.form.addControl(q.key, this.fb.control(defaultValue));
       this.savedQuestions[q.key] = false;
       this.form.get(q.key)?.valueChanges.subscribe(() => this.resetButton(q.key));
@@ -62,6 +64,8 @@ export class QuestionnaireFormComponent implements OnInit {
   }
 
   submitQuestion(questionKey: string): void {
+    const control = this.form.get(questionKey);
+    if (!control || control.invalid || this.savedQuestions[questionKey]) return;
     this.savedQuestions[questionKey] = true;
     this.submitted.emit(questionKey);
   }
