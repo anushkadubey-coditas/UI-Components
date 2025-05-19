@@ -12,6 +12,7 @@ export interface SidebarItem {
 
 @Component({
   selector: 'lib-sidebar',
+  standalone: true,
   imports: [RouterModule, CommonModule, CollapseModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'

@@ -8,4 +8,7 @@
   .form-check-input {
     margin-right: vars.$spacer-sm;
   }
+  .form-check-input:checked {
+    background-color: vars.$primary !important;
+  }
 }

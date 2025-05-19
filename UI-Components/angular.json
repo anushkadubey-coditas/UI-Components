@@ -102,6 +102,24 @@
             ],
             "scripts": []
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/ui-components/.storybook",
+            "browserTarget": "UI-Components:build",
+            "compodoc": false,
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/ui-components/.storybook",
+            "browserTarget": "UI-Components:build",
+            "compodoc": false,
+            "outputDir": "dist/storybook/UI-Components"
+          }
         }
       }
     },
@@ -134,6 +152,24 @@
               "zone.js",
               "zone.js/testing"
             ]
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/ui-components/.storybook",
+            "browserTarget": "ui-components:build",
+            "compodoc": false,
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/ui-components/.storybook",
+            "browserTarget": "ui-components:build",
+            "compodoc": false,
+            "outputDir": "dist/storybook/ui-components"
           }
         }
       }
